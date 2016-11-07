@@ -1,0 +1,51 @@
+.avaho-panel {
+  position: relative;
+}
+
+.avaho-top-panel {
+  padding: 1rem 0;
+
+  .input-group {
+    .form-control {
+      width: 40%;
+    }
+
+    .input-group-btn {
+      width: 20%;
+      display: inline-block;
+    }
+  }
+}
+
+.avaho-bottom-panel {
+  position: absolute;
+  width: 100%;
+  background: #f3f3f3;
+  z-index: 1000;
+
+  .container {
+    padding: 1rem 0;
+  }
+
+  .row {
+    margin: 1rem 0;
+  }
+
+  .inner-row {
+    display: flex;
+
+    &>div {
+      padding-right: 1rem;
+    }
+  }
+}
+
+.panel-backdrop {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: rgba(0,0,0,0.5);
+}

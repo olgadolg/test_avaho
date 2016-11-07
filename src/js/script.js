@@ -1,11 +1,13 @@
 $(function () {
 
-  $('.avaho-panel-dropdown .btn').on('click', function () {
+  //change bootstrap logic for dropdown.
+  //close if clicked on another element
+  $('.dropdown-checkbox .btn').on('click', function () {
     $(this).parent().toggleClass('open');
   });
 
   $('body').on('click', function (e) {
-    if ($('.avaho-panel-dropdown').hasClass('open')) {
+    if ($('.dropdown-checkbox').hasClass('open')) {
       e.cancelBubble = true;
       if (e.stopPropagation) {
         e.stopPropagation();
@@ -14,7 +16,7 @@ $(function () {
       var obj = e.target || event.srcElement;
 
       while (obj.parentNode) {
-        if ($(obj).hasClass('avaho-panel-dropdown')) {
+        if ($(obj).hasClass('dropdown-checkbox')) {
           break;
         }
         else {
@@ -22,12 +24,13 @@ $(function () {
         }
       }
 
-      if (!$(obj).hasClass('avaho-panel-dropdown')) {
-        $('.avaho-panel-dropdown').removeClass('open');
+      if (!$(obj).hasClass('dropdown-checkbox')) {
+        $('.dropdown-checkbox').removeClass('open');
       }
     }
   });
 
+  //added backdrop for body
   $('.avaho-bottom-panel').on({
     'show.bs.collapse': function () {
       var backdrop = $('<div></div>').addClass('panel-backdrop');
